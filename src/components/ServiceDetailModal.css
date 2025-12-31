@@ -1,0 +1,542 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #dc2626;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 30px 30px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.modal-category {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Image Gallery */
+.image-gallery {
+  padding: 0 30px;
+  margin-bottom: 24px;
+}
+
+.main-image-container {
+  position: relative;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background: white;
+}
+
+.nav-button.prev {
+  left: 16px;
+}
+
+.nav-button.next {
+  right: 16px;
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border-color: #3b82f6;
+  transform: scale(1.05);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 0 30px;
+}
+
+.service-details {
+  display: grid;
+  gap: 24px;
+}
+
+.detail-section h3,
+.description-section h3,
+.contact-section h3,
+.reviews-section h3,
+.availability-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.availability.available {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.availability.booked {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.description-section p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Contact Section */
+.contact-details {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: #374151;
+  min-width: 60px;
+}
+
+.contact-value {
+  color: #3b82f6;
+}
+
+.contact-value a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.contact-value a:hover {
+  text-decoration: underline;
+}
+
+/* Reviews Section */
+.review-card {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.review-user {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.review-date {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.review-rating {
+  margin-bottom: 12px;
+}
+
+.review-comment {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  padding: 8px 16px;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: #3b82f6;
+  background: #3b82f6;
+  color: white;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Availability Section */
+.availability-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-dot.available {
+  background: #10b981;
+}
+
+.status-dot.booked {
+  background: #ef4444;
+}
+
+.calendar-dates {
+  margin-top: 16px;
+}
+
+.calendar-dates h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin: 16px 0 8px 0;
+}
+
+.date-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.date-tag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.date-tag.available {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.date-tag.booked {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 24px 30px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.book-now-btn {
+  padding: 16px 32px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 200px;
+}
+
+.book-now-btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.book-now-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.book-now-btn.booked {
+  background: #ef4444;
+}
+
+.book-now-btn.booked:hover {
+  background: #dc2626;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-content {
+    max-height: 95vh;
+  }
+  
+  .modal-header,
+  .image-gallery,
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+  }
+  
+  .main-image-container {
+    height: 300px;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 45px;
+  }
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .date-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .date-tag {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .modal-footer {
+    padding: 20px;
+  }
+  
+  .book-now-btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header,
+  .image-gallery,
+  .modal-body {
+    padding: 16px;
+  }
+  
+  .modal-title {
+    font-size: 20px;
+  }
+  
+  .main-image-container {
+    height: 250px;
+  }
+  
+  .thumbnail-container {
+    justify-content: flex-start;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: 40px;
+  }
+  
+  .pagination-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Star Rating Styles */
+.star {
+  font-size: 16px;
+  margin-right: 2px;
+}
+
+.star.full {
+  color: #fbbf24;
+}
+
+.star.half {
+  color: #fbbf24;
+  opacity: 0.7;
+}
+
+.star.empty {
+  color: #d1d5db;
+}
+
+.rating-text {
+  margin-left: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  animation: fadeIn 0.3s ease-out;
+}

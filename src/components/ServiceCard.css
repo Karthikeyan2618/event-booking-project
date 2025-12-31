@@ -1,0 +1,173 @@
+.service-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.availability-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.availability-badge.available {
+  background: #10b981;
+  color: white;
+}
+
+.availability-badge.booked {
+  background: #ef4444;
+  color: white;
+}
+
+.service-info {
+  padding: 20px;
+}
+
+.service-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #1f2937;
+}
+
+.service-category {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.service-location {
+  color: #4b5563;
+  font-size: 14px;
+  margin: 0 0 12px 0;
+}
+
+.service-rating {
+  display: flex;
+  align-items: center;
+  margin: 0 0 12px 0;
+}
+
+.star {
+  font-size: 16px;
+  margin-right: 2px;
+}
+
+.star.full {
+  color: #fbbf24;
+}
+
+.star.half {
+  color: #fbbf24;
+  opacity: 0.7;
+}
+
+.star.empty {
+  color: #d1d5db;
+}
+
+.rating-text {
+  margin-left: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.service-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #059669;
+  margin: 0 0 12px 0;
+}
+
+
+.service-description {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3; /* Standard property for compatibility */
+}
+
+.book-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.book-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.book-btn.booked {
+  background: #ef4444;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .service-info {
+    padding: 16px;
+  }
+  
+  .service-name {
+    font-size: 16px;
+  }
+  
+  .service-price {
+    font-size: 20px;
+  }
+  
+  .book-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
