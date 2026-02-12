@@ -9,13 +9,13 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
   if (!isOpen || !service) return null;
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === service.images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? service.images.length - 1 : prevIndex - 1
     );
   };
@@ -47,20 +47,20 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
-    
+
     for (let i = 0; i < fullStars; i++) {
       stars.push(<span key={i} className="star full">★</span>);
     }
-    
+
     if (hasHalfStar) {
       stars.push(<span key="half" className="star half">★</span>);
     }
-    
+
     const emptyStars = 5 - Math.ceil(rating);
     for (let i = 0; i < emptyStars; i++) {
       stars.push(<span key={`empty-${i}`} className="star empty">☆</span>);
     }
-    
+
     return stars;
   };
 
@@ -87,8 +87,8 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
         {/* Image Gallery with Carousel */}
         <div className="image-gallery">
           <div className="main-image-container">
-            <img 
-              src={service.images[currentImageIndex]} 
+            <img
+              src={service.images[currentImageIndex]}
               alt={service.name}
               className="main-image"
             />
@@ -103,7 +103,7 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
               </>
             )}
           </div>
-          
+
           {service.images.length > 1 && (
             <div className="thumbnail-container">
               {service.images.map((image, index) => (
@@ -126,7 +126,7 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
               <div className="detail-grid">
                 <div className="detail-item">
                   <span className="detail-label">Price:</span>
-                  <span className="detail-value">${service.price}</span>
+                  <span className="detail-value">₹{service.price}</span>
                 </div>
                 <div className="detail-item">
                   <span className="detail-label">Location:</span>
@@ -191,11 +191,11 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
                   <p className="review-comment">{review.comment}</p>
                 </div>
               ))}
-              
+
               {service.reviews.length > reviewsPerPage && (
                 <div className="pagination-controls">
-                  <button 
-                    className="pagination-btn" 
+                  <button
+                    className="pagination-btn"
                     onClick={prevReviewPage}
                     disabled={currentReviewPage === 1}
                   >
@@ -204,8 +204,8 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
                   <span className="pagination-info">
                     Page {currentReviewPage} of {totalReviewPages}
                   </span>
-                  <button 
-                    className="pagination-btn" 
+                  <button
+                    className="pagination-btn"
                     onClick={nextReviewPage}
                     disabled={currentReviewPage === totalReviewPages}
                   >
@@ -237,7 +237,7 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
                     </span>
                   ))}
                 </div>
-                
+
                 <h4>Booked Dates:</h4>
                 <div className="date-list">
                   {service.availabilityCalendar.bookedDates.map((date, index) => (
@@ -252,7 +252,7 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
         </div>
 
         <div className="modal-footer">
-          <button 
+          <button
             className={`book-now-btn ${service.availability === 'Booked' ? 'booked' : ''}`}
             onClick={() => onBookNow(service)}
             disabled={service.availability === 'Booked'}

@@ -1,9 +1,9 @@
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Filters from './components/Filters';
 import ServiceCard from './components/ServiceCard';
 import ServiceDetailModal from './components/ServiceDetailModal';
 import BookingModal from './components/BookingModal';
-import LoadingSpinner, { SkeletonLoader } from './components/LoadingSpinner';
+
 import { ToastProvider, useToast } from './components/Toast';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { useServices } from './hooks/useApiCall';
@@ -11,12 +11,12 @@ import { categories, locations } from './data/mockData';
 import './App.css';
 
 const AppContent = () => {
-  const [viewMode, setViewMode] = useState('grid');
+
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [bookingService, setBookingService] = useState(null);
-  
+
   const { services, loading, error, fetchServices } = useServices();
   const toast = useToast();
 
@@ -25,7 +25,7 @@ const AppContent = () => {
     category: 'All',
     location: 'All',
     minPrice: 0,
-    maxPrice: 2000,
+    maxPrice: 50000,
     minRating: 0
   });
 
@@ -45,9 +45,7 @@ const AppContent = () => {
     setFilters(newFilters);
   }, []);
 
-  const handleViewModeChange = useCallback((mode) => {
-    setViewMode(mode);
-  }, []);
+
 
   const handleServiceClick = useCallback((service) => {
     setSelectedService(service);
@@ -82,7 +80,7 @@ const AppContent = () => {
         <h2>Loading Services...</h2>
       </div>
       <div className="skeleton-grid">
-        <SkeletonLoader type="card" count={6} />
+        <p>Loading...</p>
       </div>
     </div>
   );
@@ -97,8 +95,8 @@ const AppContent = () => {
         <div className="error-icon">⚠️</div>
         <h3>Unable to load services</h3>
         <p>{error}</p>
-        <button 
-          className="btn-primary" 
+        <button
+          className="btn-primary"
           onClick={() => fetchServices(filters)}
         >
           Try Again
@@ -116,11 +114,11 @@ const AppContent = () => {
         )}
       </div>
 
-      <div className={`services-grid ${viewMode === 'list' ? 'list-view' : ''}`}>
+      <div className="services-grid list-view">
         {services.map(service => (
-          <ServiceCard 
-            key={service.id} 
-            service={service} 
+          <ServiceCard
+            key={service.id}
+            service={service}
             onClick={handleServiceClick}
           />
         ))}
@@ -151,9 +149,6 @@ const AppContent = () => {
                 onFiltersChange={handleFiltersChange}
                 categories={categories}
                 locations={locations}
-                viewMode={viewMode}
-                onViewModeChange={handleViewModeChange}
-                loading={loading}
               />
             </aside>
 

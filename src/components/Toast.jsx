@@ -75,12 +75,12 @@ export const ToastProvider = ({ children }) => {
     setToasts(prev => prev.filter(toast => toast.id !== id));
   };
 
-  const toast = {
+  const toast = React.useMemo(() => ({
     success: (message, options) => addToast(message, { ...options, type: 'success' }),
     error: (message, options) => addToast(message, { ...options, type: 'error' }),
     warning: (message, options) => addToast(message, { ...options, type: 'warning' }),
     info: (message, options) => addToast(message, { ...options, type: 'info' }),
-  };
+  }), []);
 
   return (
     <ToastContext.Provider value={toast}>

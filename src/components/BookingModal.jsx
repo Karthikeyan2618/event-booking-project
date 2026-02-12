@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useBooking, useAvailability } from '../hooks/useApiCall';
 import { useToast } from './Toast';
-import { InlineLoading } from './LoadingSpinner';
+
 import './BookingModal.css';
 
 const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
@@ -19,7 +19,7 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
   });
   const [errors, setErrors] = useState({});
   const [availabilityChecked, setAvailabilityChecked] = useState(false);
-  
+
   const { submitBooking, loading: bookingLoading, error: bookingError, reset: resetBooking } = useBooking();
   const { checkAvailability, loading: availabilityLoading, availability, reset: resetAvailability } = useAvailability();
   const toast = useToast();
@@ -68,8 +68,8 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
       ...prev,
       [field]: value
     }));
-    
-    
+
+
     if (errors[field]) {
       setErrors(prev => ({
         ...prev,
@@ -80,7 +80,7 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
 
   const handleSubmit = () => {
     if (validateStep(3)) {
-      
+
       const bookingConfirmation = {
         ...bookingData,
         service: service.name,
@@ -89,7 +89,7 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
         bookingId: `BK-${Date.now()}`,
         bookingDate: new Date().toISOString()
       };
-      
+
       onBookingComplete(bookingConfirmation);
       onClose();
     }
@@ -110,7 +110,7 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
         />
         {errors.date && <span className="error-text">{errors.date}</span>}
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="time">Time *</label>
         <select
@@ -179,15 +179,15 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
         <h4>Price Summary</h4>
         <div className="price-item">
           <span>Base Price:</span>
-          <span>${service.price}</span>
+          <span>₹{service.price}</span>
         </div>
         <div className="price-item">
           <span>Guests:</span>
-          <span>{bookingData.guests} × ${service.price}</span>
+          <span>{bookingData.guests} × ₹{service.price}</span>
         </div>
         <div className="price-total">
           <span>Total:</span>
-          <span>${service.price * bookingData.guests}</span>
+          <span>₹{service.price * bookingData.guests}</span>
         </div>
       </div>
     </div>
@@ -287,7 +287,7 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
           </div>
           <div className="detail-item">
             <span>Total Price:</span>
-            <span>${service.price * bookingData.guests}</span>
+            <span>₹{service.price * bookingData.guests}</span>
           </div>
         </div>
 
@@ -351,8 +351,8 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
               ))}
             </div>
             <div className="progress-bar">
-              <div 
-                className="progress-fill" 
+              <div
+                className="progress-fill"
                 style={{ width: `${(currentStep - 1) * 33.33}%` }}
               ></div>
             </div>
@@ -372,7 +372,7 @@ const BookingModal = ({ service, isOpen, onClose, onBookingComplete }) => {
               Back
             </button>
           )}
-          
+
           {currentStep < 4 ? (
             <button className="btn-primary" onClick={handleNext}>
               Continue

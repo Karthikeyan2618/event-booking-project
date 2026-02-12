@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Filters.css';
 
-const Filters = ({ 
-  filters, 
-  onFiltersChange, 
-  categories, 
-  locations,
-  viewMode,
-  onViewModeChange,
-  loading = false
+const Filters = ({
+  filters,
+  onFiltersChange,
+  categories,
+  locations
 }) => {
   const [searchTerm, setSearchTerm] = useState(filters.search || '');
   const [debouncedSearch, setDebouncedSearch] = useState(filters.search || '');
@@ -53,7 +50,7 @@ const Filters = ({
       category: 'All',
       location: 'All',
       minPrice: 0,
-      maxPrice: 2000,
+      maxPrice: 50000,
       minRating: 0
     });
   };
@@ -80,24 +77,7 @@ const Filters = ({
         />
       </div>
 
-      {/* View Mode Toggle */}
-      <div className="filter-group">
-        <label>View Mode</label>
-        <div className="view-mode-toggle">
-          <button
-            className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
-            onClick={() => onViewModeChange('grid')}
-          >
-            Grid
-          </button>
-          <button
-            className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
-            onClick={() => onViewModeChange('list')}
-          >
-            List
-          </button>
-        </div>
-      </div>
+
 
       {/* Category Filter */}
       <div className="filter-group">
@@ -135,7 +115,7 @@ const Filters = ({
 
       {/* Price Range Filter */}
       <div className="filter-group">
-        <label>Price Range: ${filters.minPrice} - ${filters.maxPrice}</label>
+        <label>Price Range: ₹{filters.minPrice} - ₹{filters.maxPrice}</label>
         <div className="price-inputs">
           <input
             type="number"

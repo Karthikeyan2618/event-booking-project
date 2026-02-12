@@ -4,12 +4,12 @@ export const servicesData = [
     id: 1,
     name: "DJ Pro Sounds",
     category: "DJ",
-    price: 500,
+    price: 15000,
     rating: 4.8,
-    location: "New York",
+    location: "Chennai",
     availability: "Available",
     description: "Professional DJ services for all events with top equipment. We provide state-of-the-art sound systems, lighting effects, and experienced DJs who can read the crowd and keep the energy high throughout your event.",
-    longDescription: "DJ Pro Sounds has been serving the New York area for over 10 years. We specialize in weddings, corporate events, and private parties. Our team includes 5 professional DJs with expertise in various music genres. We provide complete event planning consultation and can coordinate with your venue for seamless setup.",
+    longDescription: "DJ Pro Sounds has been serving the Chennai area for over 10 years. We specialize in weddings, corporate events, and private parties. Our team includes 5 professional DJs with expertise in various music genres. We provide complete event planning consultation and can coordinate with your venue for seamless setup.",
     images: [
       "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&h=400&fit=crop",
@@ -27,7 +27,7 @@ export const servicesData = [
       availableDates: ["2024-02-16", "2024-02-17", "2024-02-18", "2024-02-22", "2024-02-23", "2024-02-24"]
     },
     contactInfo: {
-      phone: "+1 (555) 123-4567",
+      phone: "+91 98765 43210",
       email: "bookings@djprosounds.com",
       website: "www.djprosounds.com"
     }
@@ -36,9 +36,9 @@ export const servicesData = [
     id: 2,
     name: "Elite Photography",
     category: "Photographer",
-    price: 800,
+    price: 25000,
     rating: 4.9,
-    location: "Los Angeles",
+    location: "Coimbatore",
     availability: "Available",
     description: "Award-winning photography for weddings and corporate events",
     longDescription: "Elite Photography has won multiple awards for wedding and event photography. Our team of 8 professional photographers uses the latest Canon and Nikon equipment. We offer packages that include digital copies, prints, albums, and online galleries. Specializing in natural light photography and creative compositions.",
@@ -57,7 +57,7 @@ export const servicesData = [
       availableDates: ["2024-02-12", "2024-02-13", "2024-02-14", "2024-02-15", "2024-02-16", "2024-02-17"]
     },
     contactInfo: {
-      phone: "+1 (555) 987-6543",
+      phone: "+91 98765 43211",
       email: "info@elitephotography.com",
       website: "www.elitephotography.com"
     }
@@ -66,12 +66,12 @@ export const servicesData = [
     id: 3,
     name: "Gourmet Catering",
     category: "Caterer",
-    price: 1200,
+    price: 40000,
     rating: 4.7,
-    location: "Chicago",
+    location: "Madurai",
     availability: "Available",
     description: "Premium catering services with customizable menus",
-    longDescription: "Gourmet Catering offers exquisite culinary experiences for events of all sizes. Our executive chef creates custom menus using locally sourced, organic ingredients. We specialize in farm-to-table cuisine, dietary accommodations, and elegant presentation. Services include full staff, equipment rental, and event coordination.",
+    longDescription: "Gourmet Catering offers exquisite culinary experiences for events of all sizes. Our executive chef creates custom menus using locally sourced, organic ingredients. We specialize in South Indian cuisine, dietary accommodations, and elegant presentation. Services include full staff, equipment rental, and event coordination.",
     images: [
       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600&h=400&fit=crop",
@@ -80,14 +80,14 @@ export const servicesData = [
     reviews: [
       { id: 1, user: "Thomas Clark", rating: 5, comment: "Exceptional food and presentation. Guests were impressed!", date: "2024-01-14" },
       { id: 2, user: "Maria Rodriguez", rating: 4, comment: "Delicious menu options and professional service.", date: "2024-01-09" },
-      { id: 3, user: "James Wilson", rating: 5, comment: "Best catering service in Chicago. Highly recommended!", date: "2023-12-18" }
+      { id: 3, user: "James Wilson", rating: 5, comment: "Best catering service in Madurai. Highly recommended!", date: "2023-12-18" }
     ],
     availabilityCalendar: {
       bookedDates: ["2024-02-08", "2024-02-09", "2024-02-16"],
       availableDates: ["2024-02-10", "2024-02-11", "2024-02-12", "2024-02-13", "2024-02-14", "2024-02-15"]
     },
     contactInfo: {
-      phone: "+1 (555) 456-7890",
+      phone: "+91 98765 43212",
       email: "events@gourmetcatering.com",
       website: "www.gourmetcatering.com"
     }
@@ -96,27 +96,27 @@ export const servicesData = [
     id: 4,
     name: "Beat Masters DJ",
     category: "DJ",
-    price: 350,
+    price: 12000,
     rating: 4.5,
-    location: "Miami",
+    location: "Trichy",
     availability: "Booked",
     description: "Energetic DJs specializing in dance music events",
-    longDescription: "Beat Masters DJ brings high-energy performances to Miami's vibrant event scene. Specializing in Latin, EDM, and top 40 music. Our DJs are fluent in both English and Spanish. We provide lighting, fog machines, and custom playlists. Perfect for clubs, parties, and cultural events.",
+    longDescription: "Beat Masters DJ brings high-energy performances to Trichy's vibrant event scene. Specializing in Tamil beats, EDM, and top 40 music. Our DJs are fluent in both English and Tamil. We provide lighting, fog machines, and custom playlists. Perfect for clubs, parties, and cultural events.",
     images: [
       "https://images.unsplash.com/photo-1501281667305-0d4e0ab1416f?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1461784121038-f088ca1e7714?w=600&h=400&fit=crop"
     ],
     reviews: [
-      { id: 1, user: "Carlos Mendez", rating: 5, comment: "¡Increíble! La fiesta no paró toda la noche.", date: "2024-01-13" },
-      { id: 2, user: "Sophia Lopez", rating: 4, comment: "Great energy and music selection for our beach party.", date: "2024-01-07" }
+      { id: 1, user: "Karthik", rating: 5, comment: "Incredible! The party didn't stop all night.", date: "2024-01-13" },
+      { id: 2, user: "Sophia Lopez", rating: 4, comment: "Great energy and music selection for our party.", date: "2024-01-07" }
     ],
     availabilityCalendar: {
       bookedDates: ["2024-02-14", "2024-02-15", "2024-02-21", "2024-02-22", "2024-02-28"],
       availableDates: ["2024-02-16", "2024-02-17", "2024-02-23", "2024-02-24"]
     },
     contactInfo: {
-      phone: "+1 (555) 234-5678",
+      phone: "+91 98765 43213",
       email: "book@beatmastersdj.com",
       website: "www.beatmastersdj.com"
     }
@@ -125,12 +125,12 @@ export const servicesData = [
     id: 5,
     name: "Portrait Studio",
     category: "Photographer",
-    price: 600,
+    price: 18000,
     rating: 4.6,
-    location: "San Francisco",
+    location: "Salem",
     availability: "Available",
     description: "Studio and on-location photography services",
-    longDescription: "Portrait Studio offers professional portrait sessions in our state-of-the-art studio or at locations throughout the Bay Area. We specialize in family portraits, headshots, engagement photos, and creative concepts. Our packages include digital files, prints, and retouching services.",
+    longDescription: "Portrait Studio offers professional portrait sessions in our state-of-the-art studio or at locations throughout Tamil Nadu. We specialize in family portraits, headshots, engagement photos, and creative concepts. Our packages include digital files, prints, and retouching services.",
     images: [
       "https://images.unsplash.com/photo-1554080353-a576cf803bda?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1515023115689-589c33041d4c?w=600&h=400&fit=crop",
@@ -145,7 +145,7 @@ export const servicesData = [
       availableDates: ["2024-02-11", "2024-02-12", "2024-02-13", "2024-02-14", "2024-02-15", "2024-02-16"]
     },
     contactInfo: {
-      phone: "+1 (555) 345-6789",
+      phone: "+91 98765 43214",
       email: "studio@portraitstudio.com",
       website: "www.portraitstudio.com"
     }
@@ -154,27 +154,27 @@ export const servicesData = [
     id: 6,
     name: "Delicious Bites",
     category: "Caterer",
-    price: 900,
+    price: 30000,
     rating: 4.4,
-    location: "Boston",
+    location: "Tirunelveli",
     availability: "Available",
     description: "Fresh and delicious catering for all occasions",
-    longDescription: "Delicious Bites brings New England's finest ingredients to your events. We specialize in seafood, traditional New England cuisine, and modern American fare. Our team focuses on sustainable sourcing and creative presentation. Perfect for corporate events, weddings, and private parties.",
+    longDescription: "Delicious Bites brings Tirunelveli's finest ingredients to your events. We specialize in traditional Halwa, South Indian cuisine, and modern fare. Our team focuses on sustainable sourcing and creative presentation. Perfect for corporate events, weddings, and private parties.",
     images: [
       "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop"
     ],
     reviews: [
-      { id: 1, user: "William Taylor", rating: 4, comment: "Excellent seafood options for our corporate event.", date: "2024-01-10" },
-      { id: 2, user: "Olivia Harris", rating: 5, comment: "The lobster rolls were incredible! Will book again.", date: "2024-01-05" }
+      { id: 1, user: "William Taylor", rating: 4, comment: "Excellent food options for our corporate event.", date: "2024-01-10" },
+      { id: 2, user: "Olivia Harris", rating: 5, comment: "The Halwa was incredible! Will book again.", date: "2024-01-05" }
     ],
     availabilityCalendar: {
       bookedDates: ["2024-02-08", "2024-02-15"],
       availableDates: ["2024-02-09", "2024-02-10", "2024-02-11", "2024-02-12", "2024-02-13", "2024-02-14"]
     },
     contactInfo: {
-      phone: "+1 (555) 456-1234",
+      phone: "+91 98765 43215",
       email: "catering@deliciousbites.com",
       website: "www.deliciousbites.com"
     }
@@ -183,12 +183,12 @@ export const servicesData = [
     id: 7,
     name: "Sound Wave DJ",
     category: "DJ",
-    price: 450,
+    price: 13500,
     rating: 4.3,
-    location: "Seattle",
+    location: "Erode",
     availability: "Available",
     description: "Modern DJ services with the latest music technology",
-    longDescription: "Sound Wave DJ brings cutting-edge audio technology to the Pacific Northwest. We specialize in electronic music, indie, and alternative genres. Our equipment includes Pioneer DJ controllers, Funktion-One sound systems, and intelligent lighting. Perfect for clubs, festivals, and underground events.",
+    longDescription: "Sound Wave DJ brings cutting-edge audio technology to Erode. We specialize in electronic music, indie, and alternative genres. Our equipment includes Pioneer DJ controllers and intelligent lighting. Perfect for clubs, festivals, and events.",
     images: [
       "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop",
@@ -196,14 +196,14 @@ export const servicesData = [
     ],
     reviews: [
       { id: 1, user: "Kevin Moore", rating: 4, comment: "Great sound quality and lighting effects.", date: "2024-01-09" },
-      { id: 2, user: "Jessica White", rating: 4, comment: "Perfect for our underground music event.", date: "2024-01-04" }
+      { id: 2, user: "Jessica White", rating: 4, comment: "Perfect for our music event.", date: "2024-01-04" }
     ],
     availabilityCalendar: {
       bookedDates: ["2024-02-07", "2024-02-14"],
       availableDates: ["2024-02-08", "2024-02-09", "2024-02-10", "2024-02-11", "2024-02-12", "2024-02-13"]
     },
     contactInfo: {
-      phone: "+1 (555) 567-8901",
+      phone: "+91 98765 43216",
       email: "bookings@soundwavedj.com",
       website: "www.soundwavedj.com"
     }
@@ -212,12 +212,12 @@ export const servicesData = [
     id: 8,
     name: "Event Photographers",
     category: "Photographer",
-    price: 700,
+    price: 22000,
     rating: 4.8,
-    location: "Austin",
+    location: "Vellore",
     availability: "Booked",
     description: "Professional event photography with quick turnaround",
-    longDescription: "Event Photographers captures the essence of Austin's vibrant event scene. We specialize in live music events, festivals, and cultural celebrations. Our photographers are skilled in action shots, crowd energy, and artistic compositions. Quick digital delivery and social media-ready content included.",
+    longDescription: "Event Photographers captures the essence of Vellore's vibrant event scene. We specialize in live music events, festivals, and cultural celebrations. Our photographers are skilled in action shots, crowd energy, and artistic compositions. Quick digital delivery and social media-ready content included.",
     images: [
       "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&h=400&fit=crop",
       "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&h=400&fit=crop",
@@ -232,7 +232,7 @@ export const servicesData = [
       availableDates: ["2024-02-12", "2024-02-13", "2024-02-14", "2024-02-15", "2024-02-16"]
     },
     contactInfo: {
-      phone: "+1 (555) 678-9012",
+      phone: "+91 98765 43217",
       email: "info@eventphotographers.com",
       website: "www.eventphotographers.com"
     }
@@ -240,4 +240,4 @@ export const servicesData = [
 ];
 
 export const categories = ["All", "DJ", "Photographer", "Caterer"];
-export const locations = ["All", "New York", "Los Angeles", "Chicago", "Miami", "San Francisco", "Boston", "Seattle", "Austin"];
+export const locations = ["All", "Chennai", "Coimbatore", "Madurai", "Trichy", "Salem", "Tirunelveli", "Erode", "Vellore"];

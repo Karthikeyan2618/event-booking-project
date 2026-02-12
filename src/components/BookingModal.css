@@ -1,11 +1,11 @@
-
 .booking-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,62 +16,64 @@
 
 .booking-modal-content {
   background: white;
-  border-radius: 16px;
-  max-width: 600px;
+  border-radius: 20px;
+  max-width: 700px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 0.3s ease-out;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .booking-modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #ef4444;
-  color: white;
-  border: none;
+  top: 24px;
+  right: 24px;
+  background: white;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  font-weight: bold;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
   cursor: pointer;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .booking-modal-close:hover {
-  background: #dc2626;
+  background: #f3f4f6;
+  color: #111827;
+  transform: rotate(90deg);
 }
 
-
 .booking-modal-header {
-  padding: 30px 30px 20px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 32px 32px 24px;
+  border-bottom: 1px solid #f3f4f6;
 }
 
 .booking-modal-header h2 {
   font-size: 24px;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0 0 20px 0;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 24px 0;
   text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .booking-progress {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .progress-steps {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  padding: 0 10px;
 }
 
 .progress-step {
@@ -80,40 +82,43 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  min-width: 80px;
 }
 
 .step-number {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #e5e7eb;
-  color: #6b7280;
+  background: #f3f4f6;
+  color: #9ca3af;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   margin-bottom: 8px;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .step-label {
-  font-size: 12px;
-  color: #6b7280;
-  font-weight: 500;
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 600;
   text-align: center;
   transition: color 0.3s ease;
 }
 
 .progress-step.active .step-number {
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
   transform: scale(1.1);
 }
 
 .progress-step.active .step-label {
-  color: #3b82f6;
-  font-weight: 600;
+  color: #2563eb;
+  font-weight: 700;
 }
 
 .progress-step.completed .step-number {
@@ -126,42 +131,43 @@
 }
 
 .progress-bar {
-  height: 4px;
-  background: #e5e7eb;
-  border-radius: 2px;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
   position: relative;
-  margin: 0 15px;
+  margin: 0 30px;
+  overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: #3b82f6;
-  border-radius: 2px;
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #2563eb, #10b981);
+  border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .booking-modal-body {
-  padding: 30px;
-  min-height: 300px;
+  padding: 32px;
+  min-height: 350px;
+  background: #fafafa;
 }
 
 .booking-step h3 {
   font-size: 20px;
-  font-weight: 600;
-  color: #1f2937;
+  font-weight: 700;
+  color: #111827;
   margin: 0 0 24px 0;
   text-align: center;
 }
 
-
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .form-group label {
@@ -178,10 +184,11 @@
   width: 100%;
   padding: 12px 16px;
   border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.2s ease;
   background: white;
+  color: #1f2937;
 }
 
 .form-group input:focus,
@@ -189,7 +196,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 .form-group input.error,
@@ -199,25 +206,32 @@
 
 .error-text {
   color: #ef4444;
-  font-size: 12px;
-  margin-top: 4px;
-  display: block;
+  font-size: 13px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
 }
 
+.error-text::before {
+  content: '⚠';
+  margin-right: 4px;
+}
 
 .availability-info {
-  background: #f8fafc;
-  padding: 16px;
-  border-radius: 8px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
   border: 1px solid #e5e7eb;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .availability-info h4 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: #374151;
   margin: 0 0 12px 0;
+  text-transform: uppercase;
 }
 
 .date-tags {
@@ -228,31 +242,33 @@
 
 .date-tag {
   padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .date-tag.available {
-  background: #d1fae5;
-  color: #065f46;
+  background: #ecfdf5;
+  color: #047857;
   border: 1px solid #10b981;
 }
 
-
 .price-summary {
-  background: #f8fafc;
-  padding: 20px;
-  border-radius: 8px;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
   border: 1px solid #e5e7eb;
-  margin-top: 20px;
+  margin-top: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .price-summary h4 {
   font-size: 16px;
-  font-weight: 600;
-  color: #374151;
+  font-weight: 700;
+  color: #111827;
   margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #e5e7eb;
 }
 
 .price-item,
@@ -260,221 +276,241 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .price-item {
-  color: #6b7280;
-  font-size: 14px;
+  color: #4b5563;
+  font-size: 15px;
 }
 
 .price-total {
-  font-weight: 700;
+  font-weight: 800;
   color: #059669;
-  font-size: 18px;
-  padding-top: 12px;
-  border-top: 2px solid #e5e7eb;
-  margin-top: 12px;
+  font-size: 20px;
+  padding-top: 16px;
+  border-top: 2px solid #f3f4f6;
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
-
 .summary-card {
-  background: #f8fafc;
-  padding: 24px;
-  border-radius: 12px;
+  background: white;
+  padding: 0;
+  border-radius: 16px;
   border: 1px solid #e5e7eb;
+  overflow: hidden;
 }
 
 .summary-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
+  padding: 20px 24px;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
   border-bottom: 1px solid #e5e7eb;
 }
 
 .summary-header h4 {
   font-size: 18px;
   font-weight: 700;
-  color: #1f2937;
+  color: #111827;
   margin: 0;
 }
 
 .summary-header .category {
-  background: #3b82f6;
-  color: white;
+  background: #dbeafe;
+  color: #1e40af;
   padding: 4px 12px;
-  border-radius: 20px;
+  border-radius: 9999px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .summary-details {
-  margin-bottom: 20px;
+  padding: 24px;
+  background: white;
 }
 
 .detail-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-  padding: 8px 0;
+  margin-bottom: 0;
+  padding: 12px 0;
+  border-bottom: 1px dashed #f3f4f6;
 }
 
-.detail-item:not(:last-child) {
-  border-bottom: 1px solid #e5e7eb;
+.detail-item:last-child {
+  border-bottom: none;
 }
 
 .detail-item span:first-child {
   font-weight: 600;
-  color: #374151;
+  color: #4b5563;
 }
 
 .detail-item span:last-child {
-  color: #6b7280;
+  color: #111827;
+  font-weight: 500;
 }
 
 .contact-info,
 .requirements,
 .notes {
-  margin-bottom: 20px;
-  padding: 16px;
-  background: white;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
 }
 
 .contact-info h5,
 .requirements h5,
 .notes h5 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: #374151;
   margin: 0 0 12px 0;
+  text-transform: uppercase;
 }
 
 .contact-info p,
 .requirements p,
 .notes p {
   margin: 4px 0;
-  color: #6b7280;
-  font-size: 14px;
+  color: #4b5563;
+  font-size: 15px;
 }
 
 .confirmation-note {
-  background: #d1fae5;
+  background: #ecfdf5;
   color: #065f46;
   padding: 16px;
-  border-radius: 8px;
-  border: 1px solid #10b981;
-  margin-top: 20px;
+  border-radius: 12px;
+  border: 1px solid #a7f3d0;
+  margin-top: 24px;
   text-align: center;
 }
 
 .confirmation-note p {
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .booking-modal-footer {
-  padding: 24px 30px;
-  border-top: 1px solid #e5e7eb;
+  padding: 24px 32px;
+  border-top: 1px solid #f3f4f6;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  background: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .btn-primary,
 .btn-secondary,
 .btn-confirm {
-  padding: 12px 24px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  min-width: 120px;
+  min-width: 140px;
 }
 
 .btn-primary {
-  background: #3b82f6;
+  background: #2563eb;
   color: white;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #2563eb;
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(37, 99, 235, 0.3);
 }
 
 .btn-secondary {
-  background: #6b7280;
-  color: white;
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
 }
 
 .btn-secondary:hover {
-  background: #4b5563;
+  background: #e5e7eb;
+  color: #111827;
 }
 
 .btn-confirm {
-  background: #10b981;
+  background: linear-gradient(135deg, #10b981, #059669);
   color: white;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
 }
 
 .btn-confirm:hover {
-  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(16, 185, 129, 0.3);
 }
 
 .btn-primary:disabled,
 .btn-confirm:disabled {
-  background: #9ca3af;
+  background: #d1d5db;
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
-
 
 @media (max-width: 768px) {
   .booking-modal-overlay {
     padding: 10px;
   }
-  
+
   .booking-modal-content {
-    max-height: 95vh;
+    max-height: 98vh;
   }
-  
+
   .booking-modal-header,
   .booking-modal-body {
-    padding: 20px;
+    padding: 24px;
   }
-  
+
   .booking-modal-header h2 {
     font-size: 20px;
   }
-  
+
   .progress-steps {
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
   }
-  
+
   .progress-step {
     flex: 1;
     min-width: 60px;
   }
-  
+
   .step-label {
-    font-size: 11px;
+    display: none;
+    /* Hide labels on mobile to save space */
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  
+
   .booking-modal-footer {
-    padding: 20px;
-    flex-direction: column;
+    padding: 24px;
+    flex-direction: column-reverse;
+    /* Stack buttons, Confirm on top usually better but Back at bottom is standard for forms */
   }
-  
+
   .btn-primary,
   .btn-secondary,
   .btn-confirm {
@@ -484,47 +520,43 @@
 }
 
 @media (max-width: 480px) {
+
   .booking-modal-header,
   .booking-modal-body {
     padding: 16px;
   }
-  
+
   .booking-step h3 {
     font-size: 18px;
   }
-  
-  .summary-card {
-    padding: 16px;
-  }
-  
+
   .summary-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-  
+
   .date-tags {
-    justify-content: center;
+    justify-content: flex-start;
   }
-  
+
   .date-tag {
     font-size: 11px;
     padding: 4px 8px;
   }
 }
 
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 
 button:focus,
 input:focus,

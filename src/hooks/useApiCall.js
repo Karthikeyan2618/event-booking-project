@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 
 export const useApiCall = () => {
   const [loading, setLoading] = useState(false);
@@ -8,7 +8,7 @@ export const useApiCall = () => {
   const execute = useCallback(async (apiCall, ...args) => {
     setLoading(true);
     setError(null);
-    
+
     try {
       const result = await apiCall(...args);
       setData(result);
@@ -28,7 +28,7 @@ export const useApiCall = () => {
     setData(null);
   }, []);
 
-  return {
+  return React.useMemo(() => ({
     execute,
     loading,
     error,
@@ -36,14 +36,14 @@ export const useApiCall = () => {
     reset,
     hasError: error !== null,
     hasData: data !== null
-  };
+  }), [execute, loading, error, data, reset]);
 };
 
 
 export const useServices = () => {
   const [services, setServices] = useState([]);
   const [filters, setFilters] = useState({});
-  
+
   const apiCall = useApiCall();
 
   const fetchServices = useCallback(async (newFilters = {}) => {
@@ -53,16 +53,16 @@ export const useServices = () => {
         return api.getServices(newFilters);
       }
     );
-    
+
     if (result.data) {
       setServices(result.data);
       setFilters(newFilters);
     }
-    
+
     return result;
   }, [apiCall.execute]);
 
-  return {
+  return React.useMemo(() => ({
     services,
     filters,
     loading: apiCall.loading,
@@ -70,7 +70,7 @@ export const useServices = () => {
     fetchServices,
     refetch: () => fetchServices(filters),
     reset: apiCall.reset
-  };
+  }), [services, filters, apiCall.loading, apiCall.error, fetchServices, apiCall.reset]);
 };
 
 export const useBooking = () => {
@@ -85,13 +85,13 @@ export const useBooking = () => {
     );
   }, [apiCall.execute]);
 
-  return {
+  return React.useMemo(() => ({
     submitBooking,
     loading: apiCall.loading,
     error: apiCall.error,
     bookingData: apiCall.data,
     reset: apiCall.reset
-  };
+  }), [submitBooking, apiCall.loading, apiCall.error, apiCall.data, apiCall.reset]);
 };
 
 
@@ -107,13 +107,13 @@ export const useServiceDetails = () => {
     );
   }, [apiCall.execute]);
 
-  return {
+  return React.useMemo(() => ({
     service: apiCall.data,
     loading: apiCall.loading,
     error: apiCall.error,
     fetchService,
     reset: apiCall.reset
-  };
+  }), [apiCall.data, apiCall.loading, apiCall.error, fetchService, apiCall.reset]);
 };
 
 export const useAvailability = () => {
@@ -128,11 +128,11 @@ export const useAvailability = () => {
     );
   }, [apiCall.execute]);
 
-  return {
+  return React.useMemo(() => ({
     availability: apiCall.data,
     loading: apiCall.loading,
     error: apiCall.error,
     checkAvailability,
     reset: apiCall.reset
-  };
+  }), [apiCall.data, apiCall.loading, apiCall.error, checkAvailability, apiCall.reset]);
 };

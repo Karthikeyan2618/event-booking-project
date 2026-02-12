@@ -1,5 +1,6 @@
 .service-card {
-  background: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  background-size: 100% 100%;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -123,7 +124,8 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-clamp: 3; /* Standard property for compatibility */
+  line-clamp: 3;
+  /* Standard property for compatibility */
 }
 
 .book-btn {
@@ -157,15 +159,15 @@
   .service-info {
     padding: 16px;
   }
-  
+
   .service-name {
     font-size: 16px;
   }
-  
+
   .service-price {
     font-size: 20px;
   }
-  
+
   .book-btn {
     padding: 10px 20px;
     font-size: 14px;
