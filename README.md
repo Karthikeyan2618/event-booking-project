@@ -1,12 +1,33 @@
-# React + Vite
+# AuraEvents
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AuraEvents is a curated marketplace for premium event services. We bring together the finest DJs, photographers, decorators, and planners to create unforgettable atmospheres.
 
-Currently, two official plugins are available:
+## Core Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Premium Discovery**: Browse a hand-picked selection of top-tier event professionals.
+- **Atmospheric Focused**: Specialized categories for lighting, sound, and decor.
+- **Seamless Planning**: Integrated booking and communication tools.
+- **Verified Excellence**: High-resolution portfolios and authentic client reviews.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+```bash
+npm install
+```
+
+### Development
+```bash
+npm run dev
+```
+
+### Production Build
+```bash
+npm run build
+```
+
+## Vision
+To redefine how events are crafted by focusing on the 'Aura' – the unique feeling and atmosphere of every celebration.
+
+---
+© 2024 AuraEvents. All rights reserved.

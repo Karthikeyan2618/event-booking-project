@@ -132,7 +132,7 @@ const AppContent = () => {
         <div className="container">
           <div className="header-content">
             <div className="header-text">
-              <h1>Event Listing & Booking Interface</h1>
+              <h1>Eventify</h1>
               <p>Find and book the best event services</p>
             </div>
           </div>
@@ -162,7 +162,7 @@ const AppContent = () => {
 
       <footer className="app-footer">
         <div className="container">
-          <p>&copy; 2024 EventExpo. All rights reserved.</p>
+          <p>&copy; 2024 Spotlight. All rights reserved.</p>
         </div>
       </footer>
 
