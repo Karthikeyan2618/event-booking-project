@@ -1,22 +1,27 @@
 .service-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
-  background-size: 100% 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   height: 100%;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .service-image {
   position: relative;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -24,67 +29,79 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .service-card:hover .service-image img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .availability-badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
+  top: 16px;
+  right: 16px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .availability-badge.available {
-  background: #10b981;
-  color: white;
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
 }
 
 .availability-badge.booked {
-  background: #ef4444;
-  color: white;
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
 }
 
 .service-info {
-  padding: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .service-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  margin: 0 0 8px 0;
-  color: #1f2937;
+  margin: 0 0 6px 0;
+  color: #ffffff;
 }
 
 .service-category {
-  color: #6b7280;
-  font-size: 14px;
-  margin: 0 0 8px 0;
+  color: #9CA3AF;
+  font-size: 12px;
+  margin: 0 0 12px 0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
 }
 
 .service-location {
-  color: #4b5563;
-  font-size: 14px;
-  margin: 0 0 12px 0;
+  color: #9CA3AF;
+  font-size: 13px;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .service-rating {
   display: flex;
   align-items: center;
-  margin: 0 0 12px 0;
+  margin: 0 0 16px 0;
 }
 
 .star {
-  font-size: 16px;
+  font-size: 14px;
   margin-right: 2px;
 }
 
@@ -94,82 +111,85 @@
 
 .star.half {
   color: #fbbf24;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .star.empty {
-  color: #d1d5db;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .rating-text {
   margin-left: 8px;
-  color: #6b7280;
-  font-size: 14px;
+  color: #9CA3AF;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .service-price {
-  font-size: 24px;
-  font-weight: 700;
-  color: #059669;
-  margin: 0 0 12px 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
 }
 
-
 .service-description {
-  color: #6b7280;
+  color: #9CA3AF;
   font-size: 14px;
-  line-height: 1.5;
-  margin: 0 0 16px 0;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-clamp: 3;
-  /* Standard property for compatibility */
+  line-clamp: 2;
 }
 
 .book-btn {
   width: 100%;
-  padding: 12px 24px;
-  background: #3b82f6;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: auto;
 }
 
 .book-btn:hover:not(:disabled) {
-  background: #2563eb;
+  background: white;
+  color: #111827;
+  transform: translateY(-2px);
 }
 
 .book-btn:disabled {
-  background: #9ca3af;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 .book-btn.booked {
-  background: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.2);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .service-image {
+    height: 180px;
+  }
+
   .service-info {
-    padding: 16px;
+    padding: 20px;
   }
 
   .service-name {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .service-price {
-    font-size: 20px;
-  }
-
-  .book-btn {
-    padding: 10px 20px;
-    font-size: 14px;
+    font-size: 22px;
   }
 }

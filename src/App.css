@@ -6,20 +6,21 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Outfit', 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: #1f2937;
+  background-color: #0d0d12;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+  color: #f3f4f6;
   line-height: 1.6;
   min-height: 100vh;
 }
 
 .container {
   max-width: 1400px;
-  /* Increased for full page feel */
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -32,12 +33,16 @@ body {
 }
 
 .app-header {
-  background: linear-gradient(to right, #2563eb, #7c3aed);
-  /* Premium gradient */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   color: white;
-  padding: 2.5rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  margin-bottom: 2rem;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-content {
@@ -47,157 +52,131 @@ body {
   gap: 2rem;
 }
 
-.header-text {
-  flex: 1;
-}
-
 .app-header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.025em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.03em;
+  background: linear-gradient(to right, #fff, #9CA3AF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .app-header p {
-  font-size: 1.25rem;
-  opacity: 0.95;
-  font-weight: 500;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  font-weight: 400;
 }
 
 .app-main {
   flex: 1;
-  padding: 2rem 0;
+  padding: 0 0 4rem 0;
 }
 
 .content-wrapper {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
   align-items: start;
-}
-
-/* Services Section */
-.services-section {
-  background: transparent;
-  /* Remove background to blend with gradient */
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-}
-
-.services-header {
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.services-header h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #111827;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
-}
-
-.no-results {
-  color: #4b5563;
-  font-style: italic;
-  text-align: center;
-  padding: 3rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* Services Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
 }
 
 /* Filters Sidebar */
 .filters-sidebar {
   position: sticky;
-  top: 2rem;
-  height: fit-content;
+  top: 10rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 24px;
   z-index: 10;
 }
 
-/* List View Styles - Full Width */
-.services-grid.list-view {
-  grid-template-columns: 1fr;
-  /* Force single column */
-  gap: 1.5rem;
+/* Services Header */
+.services-header {
+  margin-bottom: 2rem;
 }
 
-.services-grid.list-view .service-card {
-  display: flex;
-  height: 250px;
-  /* Fixed height for consistency */
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
-  /* Removed animation: fadeInUp */
-  transform: translateY(0);
-  /* Ensure it starts in visible state */
-  opacity: 1;
-  /* Ensure visible */
+.services-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
+.services-header p {
+  color: #9CA3AF;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.no-results {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #9CA3AF;
+  font-style: italic;
+  text-align: center;
+  padding: 4rem;
+  border-radius: 24px;
+}
+
+/* Footers */
+.app-footer {
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+
+/* removed list-view styles */
 /* Loading and Animation States */
 .service-card {
-  /* Removed animation: fadeInUp for cleaner load */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Clearer gradients */
-body {
-  background: linear-gradient(135deg, #e0eaee 0%, #bdbbfa 50%, #f7d2e3 100%);
-  /* More vibrant premium gradient */
-}
-
-.app-header {
-  background: linear-gradient(to right, #4f46e5, #9333ea);
-  /* Deeper, richer header gradient */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
 }
 
 .error-state {
   text-align: center;
-  padding: 3rem 2rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
 }
 
 .error-icon {
   font-size: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   display: block;
 }
 
 .skeleton-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #0d0d12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 5px;
-  border: 2px solid #f1f5f9;
+  background: #31313a;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #4a4a55;
 }

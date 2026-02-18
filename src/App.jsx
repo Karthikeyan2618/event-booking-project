@@ -114,7 +114,7 @@ const AppContent = () => {
         )}
       </div>
 
-      <div className="services-grid list-view">
+      <div className="services-grid">
         {services.map(service => (
           <ServiceCard
             key={service.id}
@@ -169,9 +169,11 @@ const AppContent = () => {
       {/* Service Detail Modal */}
       <ServiceDetailModal
         service={selectedService}
+        similarServices={selectedService ? services.filter(s => s.category === selectedService.category && s.id !== selectedService.id).slice(0, 4) : []}
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         onBookNow={handleBookNow}
+        onSelectService={handleServiceClick}
       />
 
       {/* Booking Modal */}

@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ServiceDetailModal.css';
 
-const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
+const ServiceDetailModal = ({ service, similarServices, isOpen, onClose, onBookNow, onSelectService }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentReviewPage, setCurrentReviewPage] = useState(1);
   const reviewsPerPage = 3;
+
+  useEffect(() => {
+    if (service) {
+      setCurrentImageIndex(0);
+      setCurrentReviewPage(1);
+    }
+  }, [service?.id]);
 
   if (!isOpen || !service) return null;
 
@@ -91,6 +98,9 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
               src={service.images[currentImageIndex]}
               alt={service.name}
               className="main-image"
+              onError={(e) => {
+                e.target.src = 'https://images.unsplash.com/photo-1594122230689-45899d9e6f69?w=800&h=500&fit=crop';
+              }}
             />
             {service.images.length > 1 && (
               <>
@@ -113,6 +123,9 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
                   alt={`${service.name} ${index + 1}`}
                   className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
                   onClick={() => goToImage(index)}
+                  onError={(e) => {
+                    e.target.src = 'https://images.unsplash.com/photo-1594122230689-45899d9e6f69?w=800&h=500&fit=crop';
+                  }}
                 />
               ))}
             </div>
@@ -248,6 +261,33 @@ const ServiceDetailModal = ({ service, isOpen, onClose, onBookNow }) => {
                 </div>
               </div>
             </div>
+
+            {/* Similar Events Section */}
+            {similarServices && similarServices.length > 0 && (
+              <div className="similar-events-section">
+                <h3>Similar Events You Might Like</h3>
+                <div className="similar-events-grid">
+                  {similarServices.map((similar) => (
+                    <div
+                      key={similar.id}
+                      className="similar-event-card"
+                      onClick={() => onSelectService(similar)}
+                    >
+                      <div className="similar-event-image">
+                        <img src={similar.images[0]} alt={similar.name} />
+                      </div>
+                      <div className="similar-event-info">
+                        <h4>{similar.name}</h4>
+                        <p className="similar-event-price">₹{similar.price}</p>
+                        <div className="similar-event-rating">
+                          ⭐ {similar.rating}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

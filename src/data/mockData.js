@@ -103,9 +103,9 @@ export const servicesData = [
     description: "Energetic DJs specializing in dance music events",
     longDescription: "Beat Masters DJ brings high-energy performances to Trichy's vibrant event scene. Specializing in Tamil beats, EDM, and top 40 music. Our DJs are fluent in both English and Tamil. We provide lighting, fog machines, and custom playlists. Perfect for clubs, parties, and cultural events.",
     images: [
-      "https://images.unsplash.com/photo-1501281667305-0d4e0ab1416f?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1461784121038-f088ca1e7714?w=600&h=400&fit=crop"
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&h=500&fit=crop"
     ],
     reviews: [
       { id: 1, user: "Karthik", rating: 5, comment: "Incredible! The party didn't stop all night.", date: "2024-01-13" },
@@ -236,8 +236,171 @@ export const servicesData = [
       email: "info@eventphotographers.com",
       website: "www.eventphotographers.com"
     }
+  },
+  {
+    id: 9,
+    name: "Royal Decorators",
+    category: "Decorator",
+    price: 35000,
+    rating: 4.7,
+    location: "Chennai",
+    availability: "Available",
+    description: "Exquisite wedding and corporate event decorations",
+    longDescription: "Royal Decorators specializes in creating breathtaking environments for your most special occasions. From floral arrangements to themed stage setups, we bring your vision to life with elegance and precision.",
+    images: [
+      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1478146059778-26028b07395a?w=800&h=500&fit=crop"
+    ],
+    reviews: [
+      { id: 1, user: "Anand", rating: 5, comment: "The decor was beyond our expectations!", date: "2024-02-01" }
+    ],
+    availabilityCalendar: {
+      bookedDates: ["2024-02-28"],
+      availableDates: ["2024-03-01", "2024-03-02"]
+    },
+    contactInfo: {
+      phone: "+91 98765 43220",
+      email: "info@royaldecorators.com",
+      website: "www.royaldecorators.com"
+    }
+  },
+  {
+    id: 10,
+    name: "Sparkle Makeup Studio",
+    category: "Makeup",
+    price: 15000,
+    rating: 4.9,
+    location: "Coimbatore",
+    availability: "Available",
+    description: "Professional bridal and fashion makeup services",
+    longDescription: "Get the perfect look for your big day with Sparkle Makeup Studio. Our expert artists use premium products to enhance your natural beauty. We offer bridal, celebrity, and party makeup packages.",
+    images: [
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=500&fit=crop"
+    ],
+    reviews: [
+      { id: 1, user: "Priya", rating: 5, comment: "Made me look like a queen on my wedding day!", date: "2024-01-25" }
+    ],
+    availabilityCalendar: {
+      bookedDates: ["2024-02-20"],
+      availableDates: ["2024-02-21", "2024-02-22"]
+    },
+    contactInfo: {
+      phone: "+91 98765 43221",
+      email: "sparkle@makeupstudio.com",
+      website: "www.sparklemakeup.com"
+    }
+  },
+  {
+    id: 11,
+    name: "Grand Event Planners",
+    category: "Planner",
+    price: 50000,
+    rating: 4.8,
+    location: "Madurai",
+    availability: "Available",
+    description: "End-to-end event management for weddings and parties",
+    longDescription: "Sit back and relax while we handle every detail of your event. Grand Event Planners provides comprehensive management, from venue selection to guest coordination.",
+    images: [
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1505373633519-2479e0996841?w=800&h=500&fit=crop"
+    ],
+    reviews: [
+      { id: 1, user: "Suresh", rating: 5, comment: "Seamless execution. Highly professional team.", date: "2024-02-05" }
+    ],
+    availabilityCalendar: {
+      bookedDates: ["2024-03-10"],
+      availableDates: ["2024-03-11", "2024-03-12"]
+    },
+    contactInfo: {
+      phone: "+91 98765 43222",
+      email: "hello@grandevents.com",
+      website: "www.grandevents.com"
+    }
+  },
+  {
+    id: 12,
+    name: "Light & Magic",
+    category: "Lighting",
+    price: 10000,
+    rating: 4.6,
+    location: "Trichy",
+    availability: "Available",
+    description: "Creative lighting solutions for every mood",
+    longDescription: "Transform your venue with our intelligent lighting systems. We provide spotlighting, ambient mood lights, and festive decorations for any occasion.",
+    images: [
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=500&fit=crop"
+    ],
+    reviews: [
+      { id: 1, user: "Ravi", rating: 4, comment: "Great lights, made the party look amazing!", date: "2024-01-30" }
+    ],
+    availabilityCalendar: {
+      bookedDates: ["2024-02-14"],
+      availableDates: ["2024-02-15", "2024-02-16"]
+    },
+    contactInfo: {
+      phone: "+91 98765 43223",
+      email: "sales@lightmagic.com",
+      website: "www.lightmagic.com"
+    }
+  },
+  {
+    id: 13,
+    name: "Sweet Treats Bakery",
+    category: "Bakery",
+    price: 5000,
+    rating: 4.9,
+    location: "Salem",
+    availability: "Available",
+    description: "Custom cakes and desserts for your celebrations",
+    longDescription: "From wedding cakes to party platters, Sweet Treats Bakery offers delicious, handcrafted desserts using the finest ingredients.",
+    images: [
+      "https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&h=500&fit=crop"
+    ],
+    reviews: [
+      { id: 1, user: "Meena", rating: 5, comment: "The cake was both beautiful and tasty!", date: "2024-02-10" }
+    ],
+    availabilityCalendar: {
+      bookedDates: ["2024-02-14"],
+      availableDates: ["2024-02-15", "2024-02-16"]
+    },
+    contactInfo: {
+      phone: "+91 98765 43224",
+      email: "cakes@sweettreats.com",
+      website: "www.sweettreats.com"
+    }
+  },
+  {
+    id: 14,
+    name: "Capture Moments",
+    category: "Videographer",
+    price: 20000,
+    rating: 4.7,
+    location: "Vellore",
+    availability: "Available",
+    description: "Cinematic event videography and live streaming",
+    longDescription: "We capture every emotion of your event in high definition. Specializing in cinematic wedding films, corporate highlights, and live event coverage.",
+    images: [
+      "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&h=500&fit=crop",
+      "https://images.unsplash.com/photo-1508700115892-45ecd0562c3e?w=800&h=500&fit=crop"
+    ],
+    reviews: [
+      { id: 1, user: "John", rating: 5, comment: "The wedding film was like a movie!", date: "2024-01-20" }
+    ],
+    availabilityCalendar: {
+      bookedDates: ["2024-03-20"],
+      availableDates: ["2024-03-21", "2024-03-22"]
+    },
+    contactInfo: {
+      phone: "+91 98765 43225",
+      email: "videos@capturemoments.com",
+      website: "www.capturemoments.com"
+    }
   }
 ];
 
-export const categories = ["All", "DJ", "Photographer", "Caterer"];
+export const categories = ["All", "DJ", "Photographer", "Caterer", "Decorator", "Makeup", "Planner", "Lighting", "Bakery", "Videographer"];
 export const locations = ["All", "Chennai", "Coimbatore", "Madurai", "Trichy", "Salem", "Tirunelveli", "Erode", "Vellore"];

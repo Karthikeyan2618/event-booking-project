@@ -26,7 +26,13 @@ const ServiceCard = ({ service, onClick }) => {
   return (
     <div className="service-card" onClick={() => onClick(service)}>
       <div className="service-image">
-        <img src={service.image} alt={service.name} />
+        <img
+          src={service.images && service.images[0]}
+          alt={service.name}
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1594122230689-45899d9e6f69?w=800&h=500&fit=crop';
+          }}
+        />
         <div className={`availability-badge ${service.availability.toLowerCase()}`}>
           {service.availability}
         </div>
